@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
  
       - name: Checkout glog-action repository
         uses: actions/checkout@v4
@@ -28,6 +26,7 @@ jobs:
           github-token: ${{ secrets.PAT_TOKEN }}
           glog-token: ${{ secrets.GLOG_TOKEN }}
           env: 'dev'
+
       - name: Upload SARIF artifact
         uses: actions/upload-artifact@v4
         with:
